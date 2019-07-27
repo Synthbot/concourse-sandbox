@@ -1,4 +1,4 @@
-#!usr/bin/bash
+#!/bin/bash
 # Author: Synthbot
 # Github: https://github.com/Synthbot
 # ---
