@@ -6,17 +6,17 @@ resources:
   type: git
   source:
     uri: https://github.com/Synthbot/concourse-sandbox.git
-    branch: master
+    branch: develop
 
 - name: alpine-latest
   icon: docker
   type: docker-image
   source:
       repository: alpine
-      tag: "latest"
+      tag: latest
 
 jobs:
-- name: print-directories
+- name: print-directories-of-image
   public: true
   
   build_log_retention:
@@ -31,5 +31,6 @@ jobs:
       trigger: true
   - task: print-directories
     privileged: true
-    input-mapping: [source: concourse-sandbox, docker-base-image: alipine-latest]
+    image: alpine-latest
     file: concourse-sandbox/tasks/print-directories/print-directories.yml
+    # input-mapping: {source: concourse-sandbox}

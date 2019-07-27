@@ -1,11 +1,14 @@
 ---
-platform: linux
+config: 
+  platform: linux
 
-image_resource:
-  type: docker-image
-  source: docker-base-image
+  image_resource:
+    type: docker-image
+    source: 
+      repository: alpine
 
-inputs:
-  - name: source
-run:
-  path: ./print-directories/print-directories.sh
+  inputs:
+    - name: github-source
+    - name: docker-base-image
+  run:
+    path: ./print-directories/print-directories.sh
