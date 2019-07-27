@@ -32,5 +32,6 @@ jobs:
   - task: print-directories
     privileged: true
     image: alpine-latest
+    input_mapping: {github-source: concourse-sandbox, docker-base-image: alpine-latest}
     file: concourse-sandbox/tasks/print-directories/print-directories.yml
-    # input-mapping: {source: concourse-sandbox}
+    

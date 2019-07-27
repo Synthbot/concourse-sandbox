@@ -10,4 +10,4 @@ inputs:
   - name: github-source
   - name: docker-base-image
 run:
-  path: ./print-directories/print-directories.sh
+  path: github-source/print-directories/print-directories.sh
