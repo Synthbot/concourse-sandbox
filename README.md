@@ -11,5 +11,7 @@ fly -t tutorial set-pipeline -p my-pipeline -c pipeline.yml -l pipeline-params.y
 Notes:
 Make sure that when you add a script to your pipeline you run chmod+x.sh, git does not change the executable flag once it's been committed.
 
+Make sure the docker image being used has ping.
+
 More information available at:
 https://concourse-ci.org/

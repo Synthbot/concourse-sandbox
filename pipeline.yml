@@ -8,11 +8,11 @@ resources:
     uri: https://github.com/Synthbot/concourse-sandbox.git
     branch: develop
 
-- name: alpine-latest
+- name: ubuntu-latest
   icon: docker
   type: docker-image
   source:
-      repository: alpine
+      repository: ubuntu
       tag: latest
 
 jobs:
@@ -25,13 +25,13 @@ jobs:
   
   plan:
   - in_parallel:
-    - get: alpine-latest
+    - get: ubuntu-latest
       trigger: true
     - get: concourse-sandbox
       trigger: true
   - task: print-directories
     privileged: true
-    image: alpine-latest
-    input_mapping: {github-source: concourse-sandbox, docker-base-image: alpine-latest}
+    image: ubuntu-latest
+    input_mapping: {github-source: concourse-sandbox, docker-base-image: ubuntu-latest}
     file: concourse-sandbox/tasks/print-directories/print-directories.yml
     
