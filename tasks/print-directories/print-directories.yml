@@ -1,0 +1,11 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: docker-base-image
+
+inputs:
+  - name: source
+run:
+  path: ./print-directories/print-directories.sh
